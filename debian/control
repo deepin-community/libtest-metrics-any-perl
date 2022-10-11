@@ -1,0 +1,29 @@
+Source: libtest-metrics-any-perl
+Maintainer: Debian Perl Group <pkg-perl-maintainers@lists.alioth.debian.org>
+Uploaders: gregor herrmann <gregoa@debian.org>
+Section: perl
+Testsuite: autopkgtest-pkg-perl
+Priority: optional
+Build-Depends: debhelper-compat (= 13),
+               libmodule-build-perl,
+               perl
+Build-Depends-Indep: libmetrics-any-perl <!nocheck>,
+                     libtest-simple-perl <!nocheck>
+Standards-Version: 4.5.0
+Vcs-Browser: https://salsa.debian.org/perl-team/modules/packages/libtest-metrics-any-perl
+Vcs-Git: https://salsa.debian.org/perl-team/modules/packages/libtest-metrics-any-perl.git
+Homepage: https://metacpan.org/release/Test-Metrics-Any
+Rules-Requires-Root: no
+
+Package: libtest-metrics-any-perl
+Architecture: all
+Depends: ${misc:Depends},
+         ${perl:Depends},
+         libmetrics-any-perl,
+         libtest-simple-perl
+Description: module to assert that code produces metrics via Metrics::Any
+ Test::Metrics::Any helps write unit tests which assert that the code under
+ test reports metrics via Metrics::Any.
+ .
+ Loading this module automatically sets the Metrics::Any::Adapter type to
+ Test.
